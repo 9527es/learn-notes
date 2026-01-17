@@ -1,0 +1,394 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* 容器样式 */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* 头部样式 */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background: white;
+    padding: 0 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-list li {
+    padding: 20px 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    padding: 10px 0;
+    position: relative;
+}
+
+.nav-list a:hover {
+    color: #667eea;
+}
+
+.nav-list a.active {
+    color: #667eea;
+}
+
+.nav-list a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #667eea;
+}
+
+/* 主内容区样式 */
+.main-content {
+    display: flex;
+    min-height: 600px;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 250px;
+    background: #f8f9fa;
+    padding: 30px;
+    border-right: 1px solid #eee;
+}
+
+.stats-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.stats-card h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.stat-number {
+    font-weight: bold;
+    color: #333;
+}
+
+/* 标签样式 */
+.tags {
+    margin-top: 30px;
+}
+
+.tags h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: #e9ecef;
+    color: #495057;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tag:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* 笔记区域样式 */
+.notes-area {
+    flex: 1;
+    padding: 30px;
+}
+
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.notes-header h2 {
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 10px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 14px;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    background: #5a67d8;
+}
+
+/* 笔记网格样式 */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.note-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #eee;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.note-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+
+.note-title {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.note-date {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.note-content {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    max-height: 120px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.note-footer {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-tags {
+    display: flex;
+    gap: 5px;
+}
+
+.note-tag {
+    background: #e9ecef;
+    color: #495057;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+}
+
+/* 编辑器样式 */
+.editor-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    display: none;
+}
+
+.editor-header {
+    background: #f8f9fa;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editor-header input {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    width: 100%;
+    padding: 5px;
+}
+
+.editor-header input:focus {
+    outline: none;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-save {
+    background: #48bb78;
+}
+
+.btn-save:hover {
+    background: #38a169;
+}
+
+.btn-cancel {
+    background: #e53e3e;
+}
+
+.btn-cancel:hover {
+    background: #c53030;
+}
+
+.editor-body {
+    padding: 20px;
+}
+
+.editor-body textarea {
+    width: 100%;
+    min-height: 300px;
+    padding: 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+.editor-body textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* 页脚样式 */
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: white;
+    background: rgba(0,0,0,0.2);
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        order: 2;
+    }
+    
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-box input {
+        width: 200px;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+    }
+}
